@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://jiashengnote.com/%E9%97%B2%E6%89%AFGPT%EF%BD%9C%E5%B0%9D%E8%AF%95%E7%90%86%E8%A7%A3%20GPT%20API%20%E7%9A%84Function%20Calling.html" />
+      <link rel="shortcut icon" href="img/favicon.ico" />
+    <title>闲扯GPT｜尝试理解 GPT API 的Function Calling - jiashengnote</title>
+    <link rel="stylesheet" href="css/theme.css" />
+    <link rel="stylesheet" href="css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "\u95f2\u626fGPT\uff5c\u5c1d\u8bd5\u7406\u89e3 GPT API \u7684Function Calling";
+        var mkdocs_page_input_path = "\u95f2\u626fGPT\uff5c\u5c1d\u8bd5\u7406\u89e3 GPT API \u7684Function Calling.md";
+        var mkdocs_page_url = "/%E9%97%B2%E6%89%AFGPT%EF%BD%9C%E5%B0%9D%E8%AF%95%E7%90%86%E8%A7%A3%20GPT%20API%20%E7%9A%84Function%20Calling.html";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="index.html" class="icon icon-home"> jiashengnote
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="index.html">Home</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">jiashengnote</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">闲扯GPT｜尝试理解 GPT API 的Function Calling</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gpt-gpt-api-function-calling">闲扯GPT｜尝试理解 GPT API 的Function Calling</h1>
+<p><img alt="" src="assets/16869654177398.jpg" />  </p>
+<p>最近 OpenAI 对GPT API 的能力进行了升级，其中一项重要升级是增加了<strong>Function Calling</strong>能力。它的官方描述是这样的：  </p>
+<blockquote>
+<p>Developers can now describe functions to gpt-4-0613 and gpt-3.5-turbo-0613, and have the model intelligently choose to output a JSON object containing arguments to call those functions. This is a new way to more reliably connect GPT's capabilities with external tools and APIs.  </p>
+</blockquote>
+<p>简单说就是用户可以在 GPT API 中注册 Function 并实现调用。  </p>
+<p>我的第一直觉是如下图，用户可以把自己的 Function 注册到 OpenAI，然后在和 GPT 对话的时候，根据对话内容可以触发对 Function 的调用，就像 Plugin 那样。  </p>
+<p><img alt="" src="assets/16869728761577.jpg" />  </p>
+<p>但仔细看下来发现自己理解错了，GPT 其实并不管 Function 的执行，Function 的执行是由用户（或者说开发者）自己调用执行的，GPT 只是根据用户的 Prompt，<strong>确定需要调用的函数以及函数的参数输入</strong>，然后返回给用户。  </p>
+<p><img alt="" src="assets/16869735489610.jpg" />  </p>
+<p>上图只是一个示例，真实情况是 OpenAI 也不会“持久化” Function 描述，而是需要用户每次在发送的 Prompt 中携带 Function 描述  </p>
+<h3 id="function">Function是怎么描述的</h3>
+<p>以官方文档中的示例为例，假如我们有一个查询某个地方的天气的Python Function：  </p>
+<pre><code class="language-python">def get_current_weather(location, unit=&quot;fahrenheit&quot;):  
+    &quot;&quot;&quot;Get the current weather in a given location&quot;&quot;&quot;  
+    weather_info = {  
+        &quot;location&quot;: location,  
+        &quot;temperature&quot;: &quot;72&quot;,  
+        &quot;unit&quot;: unit,  
+        &quot;forecast&quot;: [&quot;sunny&quot;, &quot;windy&quot;],  
+    }  
+    return json.dumps(weather_info)  
+</code></pre>
+<p>注意，这个代码是“伪造”了一个天气信息，真实的 Function 可能是调用第三方的天气 API 来查询天气。  </p>
+<p>那么该 Python Function 对应的描述是：  </p>
+<pre><code class="language-JSON">{  
+    &quot;name&quot;: &quot;get_current_weather&quot;,  
+    &quot;description&quot;: &quot;Get the current weather in a given location&quot;,  
+    &quot;parameters&quot;: {  
+        &quot;type&quot;: &quot;object&quot;,  
+        &quot;properties&quot;: {  
+            &quot;location&quot;: {  
+                &quot;type&quot;: &quot;string&quot;,  
+                &quot;description&quot;: &quot;The city and state, e.g. San Francisco, CA&quot;,  
+            },  
+            &quot;unit&quot;: {&quot;type&quot;: &quot;string&quot;, &quot;enum&quot;: [&quot;celsius&quot;, &quot;fahrenheit&quot;]},  
+        },  
+        &quot;required&quot;: [&quot;location&quot;],  
+    },  
+}  
+</code></pre>
+<p>可以看出其中有几个关键信息：  </p>
+<ul>
+<li>name:  Function名称；  </li>
+<li>description: Function 的功能描述；   </li>
+<li>parameters: Function 的输入参数，包括参数的名称、类型、描述等；  </li>
+</ul>
+<p>在和 GPT 对话时，携带该描述，GPT 就可以根据对话信息，判断是否需要调用这个 Function，并根据 Function 的“签名”给用户返回需要传给 Function 的输入参数。  </p>
+<p>如果你是一个程序员的话，应该发现了，这不就是把程序中的注释给 OpenAI 描述了一遍吗<br />
+所以说啊，<strong>写代码的时候把注释写好的能力愈加重要了</strong>😂  </p>
+<p>不过我没有发现对于 Function 返回值的描述，是默认只能返回 String（字符串）了吗？懂的同学帮忙留个言。  </p>
+<h2 id="_1">「自然语言」与「编程语言」之间的“翻译器”</h2>
+<p>大概搞清楚 Function Calling 的功能后，我觉得与其叫<strong>Calling</strong>，不如叫<strong>Translating</strong>。GPT 实现了<strong>自然语言</strong>和<strong>编程语言</strong>之间的翻译功能，我觉得这个能力非常了不起！  </p>
+<p>我们慢慢解释一下到底怎么个“翻译”：  </p>
+<h3 id="gpt">GPT的伟大意义</h3>
+<p>之前看B站Up主“课代表立正”对GPT的划时代意义有一个描述，我印象深刻：  </p>
+<blockquote>
+<p><strong>ChatGPT已经接近人类调用算力和数据的最终极形态了！</strong>  </p>
+</blockquote>
+<p>当时这句话对我来讲非常震撼，GPT 实现了对数据/知识的高效压缩，而人类只需要使用自己熟知的自然语言，就可以调用这些数据/知识，这极大地降低了使用门槛。  </p>
+<p>但当时我没有完全听明白<strong>调用算力</strong>是什么含义。GPT 确实可以做一些“计算”，包括文本总结、问题回答等，但似乎 GPT 能够调用的计算能力有限。  </p>
+<p>对算力的调用，人类目前还是主要依赖各种编程语言，这个“语言”有一定的使用门槛，主要是程序员在使用。哪怕是易用性非常友好的SQL，也有不小的学习门槛。  </p>
+<p>但是 Function Calling 这个能力，我觉得是对上面的话的进一步“佐证”。这个能力并不是革新了 Function 的执行方式，而是革新了 Function 的调用方式。普通用户可以不依赖编程语言而实现 Function 的调用，也就是算力的调用。  </p>
+<h3 id="gpt_1">GPT的“局限性”</h3>
+<p>上面是从算力调用的角度去讲的，如果从 GPT 的“局限性”去讲，也能发现 Function Calling的意义。  </p>
+<p>所谓的 GPT 的“局限性”，其实是指<strong>自然语言的局限性</strong>。诚然自然语言的使用门槛比较低，但是自然语言也有<strong>表述模糊的局限性</strong>。  </p>
+<p>大家使用 GPT 多了就会发现，有时候想要得到自己想要的准确结果，描述起来是很费力的。特别是想要限定输出格式、类型、字数等等的时候，哪怕多试几次都不一定搞得定。  </p>
+<p>但是这恰恰是<strong>编程语言</strong>的强项，编程语言在“描述”输入、处理方式、返回结果等方面，那都是有“精准”的表述方式的。  </p>
+<p>以大数据领域常用的 WordCount Demo 为例，如果用 Python 实现的话，几行代码就可以搞定：  </p>
+<pre><code class="language-python">def word_count(text):  
+    words = text.lower().split()  
+    word_counts = {}  
+
+    for word in words:  
+        if word in word_counts:  
+            word_counts[word] += 1  
+        else:  
+            word_counts[word] = 1  
+
+    return word_counts  
+</code></pre>
+<p>但是如果要求你用 GPT 实现上述处理的话，你可以想一下大概需要怎么表述才可以，并不简单。  </p>
+<p>有了 Function Calling 的能力，就可以把<strong>自然语言的易用性</strong> 和 <strong>编程语言的准确性</strong> 结合起来，更好的调用算力。  </p>
+<h3 id="_2">“翻译”</h3>
+<p>搞清楚上面的意义后，你会发现 GPT 确实有点像个“翻译”，它可以把“用户的语言”翻译成“程序的语言”，它翻译后的“程序语言”就是 Function的名称和输入参数，这个是程序可以“理解”的。  </p>
+<p>此时此刻，我忍不住想到了一部可以“申遗”的电影的名场面……下面是（不正经的）翻译示例：  </p>
+<ol>
+<li>有一天晚上，一个 GPT 用户对于什么是“惊喜”产生了巨大的疑问，于是他问 GPT：<br />
+<img alt="" src="assets/16869771829633.jpg" />  </li>
+<li>我们的 GPT 也有点懵，不太知道怎么回答（惹得用户都开始骂娘了）。但没关系，他可以调用一下第三方的 Function 来回答（实际上应该由用户自己调用，但你懂得……）<br />
+<img alt="" src="assets/16869774098296.jpg" />  </li>
+<li>第三方 Function 接受输入参数“惊喜”，然后处理之后给出了输出：<br />
+<img alt="" src="assets/16869775266019.jpg" />  </li>
+<li>最后，要注意 Function 的返回结果并不是直接给到用户的（用户可能听不懂），而是由 GPT 根据上下文总结整理后，转述给用户的：<br />
+<img alt="" src="assets/16869777880704.jpg" />  </li>
+</ol>
+<p>翻译功能演示完毕，完美😂  </p>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = ".";</script>
+    <script src="js/theme_extra.js"></script>
+    <script src="js/theme.js"></script>
+      <script src="search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
