@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>第二大脑｜如何打造All-in-One的信息和任务管理系统 - 理论篇 - My Docs</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">My Docs</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%82%AC%E7%94%9F%E6%96%B0%E7%9A%84%E7%83%AD%E9%97%A8%E8%81%8C%E4%B8%9A%EF%BC%9AAI%20Engineer/" class="nav-link">大模型催生新的热门职业：AI Engineer</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E5%85%BB%E6%88%90%E5%A5%BD%E4%B9%A0%E6%83%AF%EF%BC%9F/" class="nav-link">如何轻松养成好习惯？</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E6%8A%80%E6%9C%AF%E7%AE%A1%E7%90%86%EF%BD%9C%E7%A8%8B%E5%BA%8F%E5%91%98%E5%BA%94%E8%AF%A5%E5%A6%82%E4%BD%95%E7%9C%8B%E5%BE%85%E2%80%9C%E8%83%B6%E6%B0%B4%E5%B7%A5%E4%BD%9C%E2%80%9D/" class="nav-link">技术管理｜程序员应该如何看待“胶水工作”</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%EF%BD%9C%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0All-in-One%E7%9A%84%E4%BF%A1%E6%81%AF%E5%92%8C%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20-%20%E5%AE%9E%E8%B7%B5%E7%AF%87/" class="nav-link">第二大脑｜如何打造All-in-One的信息和任务管理系统 - 实践篇</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">第二大脑｜如何打造All-in-One的信息和任务管理系统 - 理论篇</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E8%AF%BB%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%26%E3%80%8A%E7%BA%B3%E7%93%A6%E5%B0%94%E5%AE%9D%E5%85%B8%E3%80%8B%EF%BD%9C%20%E5%A6%82%E4%BD%95%E9%AB%98%E8%B4%A8%E9%87%8F%E5%86%B3%E7%AD%96/" class="nav-link">读《原则》&《纳瓦尔宝典》| 如何高质量决策</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E9%97%B2%E6%89%AFGPT%EF%BD%9C%E5%B0%9D%E8%AF%95%E7%90%86%E8%A7%A3%20GPT%20API%20%E7%9A%84Function%20Calling/" class="nav-link">闲扯GPT｜尝试理解 GPT API 的Function Calling</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../%E9%97%B2%E6%89%AF%EF%BD%9CChatGPT%EF%BD%9C%E3%80%8A%E5%A5%87%E7%BB%A9%E5%88%9B%E5%9D%9B%E3%80%8B%E5%8C%97%E4%BA%AC%E5%9C%BA%E8%A7%82%E4%BC%97%E6%9C%80%E5%85%B3%E5%BF%83%E7%9A%84%E5%8D%81%E4%B8%AA%E9%97%AE%E9%A2%98/" class="nav-link">闲扯｜ChatGPT｜《奇绩创坛》北京场观众最关心的十个问题</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../%E7%AC%AC%E4%BA%8C%E5%A4%A7%E8%84%91%EF%BD%9C%E5%A6%82%E4%BD%95%E6%89%93%E9%80%A0All-in-One%E7%9A%84%E4%BF%A1%E6%81%AF%E5%92%8C%E4%BB%BB%E5%8A%A1%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%20-%20%E5%AE%9E%E8%B7%B5%E7%AF%87/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../%E8%AF%BB%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B%26%E3%80%8A%E7%BA%B3%E7%93%A6%E5%B0%94%E5%AE%9D%E5%85%B8%E3%80%8B%EF%BD%9C%20%E5%A6%82%E4%BD%95%E9%AB%98%E8%B4%A8%E9%87%8F%E5%86%B3%E7%AD%96/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#all-in-one-" class="nav-link">第二大脑｜如何打造All-in-One的信息和任务管理系统 - 理论篇</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#all-in-one" class="nav-link">为什么需要All-in-One</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#para" class="nav-link">P.A.R.A理论：打造你的第二大脑</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#inbox" class="nav-link">Inbox</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">最后</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="all-in-one-">第二大脑｜如何打造All-in-One的信息和任务管理系统 - 理论篇</h1>
+<h2 id="all-in-one">为什么需要All-in-One</h2>
+<p>我是笔记软件重度用户，先后尝试过或者重度使用过印象笔记、OneNote、Notion、LogSeq、Flomo、Mem.ai等等；也是任务管理软件重度用户，先后用过Microsoft TODO、Trello、嘀嗒清单等等。  </p>
+<p>我之所以对这块如此感兴趣，是因为我非常认同一个观点：人类的大脑擅长思考，但是不擅长记忆。因此我希望能够有“第二大脑”，帮我记录下重要的信息和任务，而我可以清空大脑，只专注于当下的事情。  </p>
+<p>但是使用的软件多了，就会有一个问题：当你想要寻找某个信息的时候，你可能不记得把它记录在哪里了；当任务记录在多个软件中时，你总有一种隐隐的忧虑，会不会因为忘记打开某个软件而错过重要的任务。  </p>
+<p>所以我一直想要找一个All-in-One的软件，记录我主要的信息和任务，把它打造成我的第二大脑。通过这个第二大脑，我可以持续记录重要信息，积累知识，并且不会遗漏重要任务。  </p>
+<p>在介绍具体的软件之前，我想先分享一下当前正在实践的信息和任务管理的理论。理论和工具是相辅相成的，有扎实的理论才能够把工具用好，用到精髓；有好的工具，才能帮助我们更好地把理论落地。  </p>
+<h2 id="para">P.A.R.A理论：打造你的第二大脑</h2>
+<p>我是从去年5月开始接触并实践P.A.R.A方法的，到今天大概用了近一年了，感觉对我的帮助还是比较大的。  </p>
+<p>P.A.R.A是Tiago Forte提出的一套信息和任务管理的理论。Tiago Forte是个人生产效率专家，他的相关课程影响范围比较广。他希望能够通过这个方法打造个人的第二大脑，帮助个人在生活和工作中得到更好的发展。<br />
+<img alt="" src="../assets/16810877124230.jpg" /><br />
+<em>Picture by Tiago Forte</em>  </p>
+<p>P.A.R.A分别代表Project、Area、Resource、Archive，我们拆开讲一下它们的含义和用途。  </p>
+<h3 id="area">Area</h3>
+<p>虽然P.A.R.A的第一个P是Project，但是需要先讲一下Area，因为它代表我们人生中想要持续精进的「领域」，比如身体健康、认知提升、亲密关系、技术能力等等。而Project和Resource都是为了能够支撑我们持续精进这些领域，所以Area是前提。  </p>
+<p>Area是需要「持续精进」的，不是短时间内就能够从你的注意力范围内移除的，比如身体健康可能是我们一辈子都需要关注的事情。其次，它是多元的，可能涉及工作生活的方方面面，否则我们的人生可能会失衡。  </p>
+<p>应该设定哪些Area，主要取决于每个人对自己的认知，需要持续地向内探索内心，想清楚自己想要什么、看重什么。比如有的人把「身体健康」放在很重要的位置，有充足的动力去提升自己的身体素质，而有的人并不是很在意这些，觉得正常吃饭睡觉就够了。  </p>
+<p>常见的Area可能包含了个人的生活和工作、以及人与人之间的关系等等各方面。作为参考，一种人生九宫格的划分方法涉及了身体健康、家庭生活、工作事业、财务理财、人际社群、学习成长、体验突破、休闲娱乐（九宫格中间是“自我”）。可以了解一下这几个方面分别意味着什么，自己之前是不是完全忽略了，有没有必要后续关注起来。  </p>
+<p>设定Area首先需要我们坦诚面对自己的内心，不要虚伪。因为Project和Resource都是为了支撑我们精进Area，如果Area不是我们真正关心的事情，我们就没有动力持续投入资源进行提升。因此不要因为别人都去做了就去做，不要觉得“成功人士”都是这么做的所以我也要这么做。  </p>
+<p>其次Area应该保持均衡、聚焦、有主次。均衡是指我们需要意识到，成功的人生绝不仅仅是某方面优秀就可以。有一些事业心特别重的人，会太忽视身体健康、家庭生活等等方面，导致人生越往后越难走，这个需要想清楚。同时我们应该聚焦一些Area，不能每个方面都想做得特别好。分清主次，有些Area做到80分90分，有些Area就做到60分吧。  </p>
+<h3 id="project">Project</h3>
+<p>Project很好理解，就是一些需要我们采取行动的“项目”。在Tiago Forte的P.A.R.A的博客文章中，有一句话我做了特殊标记，“the ultimate system for organizing your life is one that is actionable”，这句话的关键是最后的“actionable”，也就是这个理论是强调行动的。  </p>
+<p>网络上有句比较烂俗的话，“知道很多道理，依然过不好这一生”。我的理解可能是因为很多人知道道理，但是没有很好的落地执行，没有制定Project。  </p>
+<p>如果我们把自己当做一个“产品”的话，你可以把上面提到的Area看做这个产品需要打磨的核心特性，而Project就是要打磨这些特性的项目。项目执行不力，特性也不可能越来越好。  </p>
+<p>举个例子，每到年底回顾的时候，我们很多人都会百感交集、痛定思痛，决定来年要提升理财能力、减肥锻炼身体、提升专业技能等等。然后这些感悟都只停留在“想法”的阶段，它们最多算是我们想要提升的Area，但很少有人针对性的制定出Project，让这些想法落地。  </p>
+<p>Project应该具备哪些特性，如何设定Project，我觉得对于科技行业的人来说并不是难事。设定一个SMART目标，然后做好任务的大致拆解，剩下得主要就靠自律了。  </p>
+<h3 id="resource">Resource</h3>
+<p>Resource是加深对Area认知、支撑Project执行的资源，这些资源可以是互联网上优秀的文章视频，也可以是我们自己思考总结的笔记。  </p>
+<p>比如我们设定了一个「专业技能」的Area，为了精进这个Area，我们可能会根据当前的工作内容，设定了一个「Java语言」的Resource模块，然后我们会把网络上能够帮助我们提升Java语言的博客教程，都归纳到这个Resource下面。一般我们可能在工作中就有可以提升专业技能的Project，但如果是学生的话，就可以自己设定一个练手的Project，通过开发一个Java语言的小软件，提升自己的专业技能。  </p>
+<p>这里可以对比一下Area和Resource的差异，「Java语言」不太适合作为Area，因为它并不是从人生长度上需要持续精进的领域。可能慢慢这个语言没落了，可能我们换工作不再需要关注它了。但是如果我们一直从事软件研发的工作，「专业技能」就是需要持续提升的领域。  </p>
+<p>我是网络资源收藏爱好者，看到好的文章视频，都忍不住归纳到自己的Resource列表中。后来发现只收藏的话效果还是差一些，还是要定期回顾、思考、总结，然后输出一些自己的文字作为Resource。这种消化吸收后的知识，可以更好的支撑自己的Area和Project。  </p>
+<p>有一点需要注意，和Area类似，Resource也要保持聚焦，最好以可以支撑Project。因为前面提到，P.A.R.A还是以「行动」为导向的，如果我们不加取舍地收集了一堆资料，归纳到泛泛的Resource下面，不仅可能没有支撑作用，还可能会给我们造成信息干扰。  </p>
+<h3 id="archive">Archive</h3>
+<p>Archive就是要把不再感兴趣的Resource、完成的Project等进行归档，仅留作后续检索使用。之所以归档，也是为了保持聚焦，在P.A.R.A中只保留当前最需要关注的信息，避免信息过载。  </p>
+<p>Area也可以归档，但是Area一般变动不是很频繁。如果频繁归档的话，可能设定Area有问题。  </p>
+<p>通过定期盘点梳理Project和Resouce，把信息进行归档，和收拾房间、打扫卫生类似。整洁条理的环境，可以帮助我们保持愉悦的心情，专注在最重要的事情上面。  </p>
+<h3 id="_1">内在关系</h3>
+<p><img alt="" src="../assets/16811754682837.jpg" /><br />
+<em>Picture by Thomas Frank</em>  </p>
+<p>上图是另外一位分享P.A.R.A的Youtube博主绘制的示意图，他添加了几个元素，包括和Project相关的Goal/Milestones/Tasks，以及和Resource相关的Notes。核心的内在关系和我们上面提到的基本是一致的，主要是Project和Resource对于Area的支撑关系，一个是提升Area的行动，一个是提升Area的资源（或者说一个是实践支撑，一个是理论支撑）。  </p>
+<h2 id="inbox">Inbox</h2>
+<p>除了P.A.R.A四个方面，我在综合了其他文章的建议后，又加入了Inbox这个概念。  </p>
+<p>Inbox就如同邮箱中的收件箱，它是信息和任务进入整个系统的第一站。Inbox主要是为了快速记录，因为有时候我们真的没有时间细想它们应该归纳到哪里，如果不先记录下来，可能很快就忘记了。  </p>
+<p>我看到想要收藏的文章时，首先通过裁剪工具把文章加入到收件箱中，然后用零碎时间慢慢读完，并把文中的亮点提取到笔记中。我一般不会像印象笔记一样裁剪全文，因为这种方式信息太多，反而是一种干扰。记录亮点文字就足够了，如果再能加上自己的思考总结那就更好了。然后把文章归纳到某个Resouce下，这篇文章就算处理完了。  </p>
+<p>任务也是类似的方法，对于随手记录的Task，先录入Inbox，然后有时间的时候就梳理评估一下，这个Task到底要不要做、什么时候做、是某个Project的Task还是临时Task。如果是在拆解Project，那就直接把Task记录在对应的Project下即可。  </p>
+<p>需要给自己培养一个习惯，每天某个时间点，处理一下Inbox中的信息和任务。如果Inbox中的信息长时间不处理，就和邮箱中的邮件积压一样，可能会导致错过重要信息和任务，也会让你焦虑。  </p>
+<p>我一般早上过一下Inbox中的Task，简单处理后的Task会在系统的某个Dashboard中集中显示，包括今天要执行的Task、Task所属的Project、优先级等等。然后午饭后或晚饭后等精力较弱的时候，过一下Inbox中的文章等。  </p>
+<h2 id="_2">最后</h2>
+<p>实践下来我的一些反思：<br />
+1. 聚焦：上面反复提到的，Area/Project/Resource都要做减法、做取舍。我总是不自觉的列的东西越来越多，导致精力兼顾不过来，重要的Area进展缓慢。<br />
+2. 回顾：信息要记录，也一定要定期回顾。回顾的过程一是要梳理信息，把不重要的信息及时归档；二是要持续思考总结，否则记录的信息就真的是“进入我的收藏夹吃灰”了。我一般周末找个时间回顾一下本周还没处理完的文章等，也会做一些思考总结。每个季度末尾也会督促自己做季度复盘。  </p>
+<p>基于这个理论，其实在很多软件中都可以进行实践。比如有的人就直接使用Google Drive的文件夹方式实践这个方法。在下一篇文章我分享一下自己的实践方法。  </p>
+<p><a href="https://fortelabs.com/blog/para/">The PARA Method: The Simple System for Organizing Your Digital Life in Seconds</a><br />
+<a href="https://www.youtube.com/watch?v=vs8WQh2k-Ow&amp;t=1245s&amp;ab_channel=ThomasFrankExplains">The ULTIMATE Second Brain Setup in Notion</a>  </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
