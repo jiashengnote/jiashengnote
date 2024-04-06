@@ -1,6 +1,6 @@
-site_name: jiashengnote
+site_name: 公众号：胜同学
 site_url: https://jiashengnote.com
 nav:
   - Home: index.md
-theme: readthedocs
+theme: material
 use_directory_urls: false
