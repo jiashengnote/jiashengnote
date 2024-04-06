@@ -2,7 +2,7 @@
 share: "true"  
 ---  
 ## 公众号：胜同学  
-![微信推广-small.jpg](./assets/%E5%BE%AE%E4%BF%A1%E6%8E%A8%E5%B9%BF-small.jpg)  
+![胜同学-公众号.jpg](./assets/%E8%83%9C%E5%90%8C%E5%AD%A6-%E5%85%AC%E4%BC%97%E5%8F%B7.jpg)  
 ## 精选文章  
 - [如何轻松养成好习惯？](./%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E5%85%BB%E6%88%90%E5%A5%BD%E4%B9%A0%E6%83%AF%EF%BC%9F.md)  
 - [读《原则》&《纳瓦尔宝典》｜ 如何高质量决策](./%E8%AF%BB%E3%80%8A%E5%8E%9F%E5%88%99%E3%80%8B&%E3%80%8A%E7%BA%B3%E7%93%A6%E5%B0%94%E5%AE%9D%E5%85%B8%E3%80%8B%EF%BD%9C%20%E5%A6%82%E4%BD%95%E9%AB%98%E8%B4%A8%E9%87%8F%E5%86%B3%E7%AD%96.md)  
