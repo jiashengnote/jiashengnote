@@ -7,12 +7,12 @@ body {
 }
 
 h1 {
-  position: relative;
-  margin: 18px 0;
-  padding-left: 12px;
-  font-size: 18px;
-  font-weight: bold;
-  line-height: 1.4;
+  font-size: 22px;
+  line-height: 2.0em;
+  letter-spacing: 0.03em;
+  padding: 4px;
+  margin-top: 30px;
+  margin-bottom: 15px;
 }
 
 h2 {
@@ -20,7 +20,6 @@ h2 {
   line-height: 1.8em;
   letter-spacing: 0.03em;
   padding: 2px;
-  padding-left: 20px
   margin-top: 20px;
   margin-bottom: 10px;
   #border-left:4px #f85959 solid;
