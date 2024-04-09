@@ -1,0 +1,45 @@
+body {
+  font-size: 16px;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+  padding: 2px;
+  margin: 1em 5px !important;
+}
+
+h1 {
+  position: relative;
+  margin: 18px 0;
+  padding-left: 12px;
+  border-left:4px #f85959 solid;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #222222;
+}
+
+h2 {
+  font-size: 20px;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+  padding: 2px;
+  padding-left: 20px
+  margin-top: 20px;
+  margin-bottom: 10px;
+  #border-left:4px #f85959 solid;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+  padding: 2px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.8em;
+  letter-spacing: 0.03em;
+  padding: 2px;
+  margin: 1em 5px !important;
+}

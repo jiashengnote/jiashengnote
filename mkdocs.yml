@@ -4,3 +4,5 @@ nav:
   - Home: index.md
 theme: material
 use_directory_urls: false
+extra_css:
+  - stylesheets/extra.css
