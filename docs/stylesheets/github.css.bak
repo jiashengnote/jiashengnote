@@ -272,7 +272,7 @@ h6 {
 }
 
 h2 {
-  font-weight: bold;
+  font-weight: 600;
   padding-bottom: .3em;
   font-size: 1.5em;
   border-bottom: 1px solid hsla(210,18%,87%,1);
@@ -313,9 +313,8 @@ br {
 blockquote {
   margin: 0;
   padding: 0 1em;
-  font-size: bold;
-  color: rgb(0,82,255);
-  border-left: .25em solid rgb(0,82,255);
+  color: #656d76;
+  border-left: .25em solid #d0d7de;
 }
 
 ul,
@@ -1080,9 +1079,4 @@ g-emoji img {
 
 .markdown-alert.markdown-alert-caution .markdown-alert-title {
   color: #d1242f;
-}
-
-.bold-text {
-    font-weight: bold;
-    color: rgb(0,82,255);
 }
