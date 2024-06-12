@@ -54,7 +54,8 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: 600;
+  font-weight: bold;
+  color: rgb(36,91,219)
 }
 
 dfn {
@@ -313,9 +314,8 @@ br {
 blockquote {
   margin: 0;
   padding: 0 1em;
-  font-size: bold;
-  color: rgb(0,82,255);
-  border-left: .25em solid rgb(0,82,255);
+  color: rgb(36,91,219);
+  border-left: .25em solid #d0d7de;
 }
 
 ul,
@@ -1082,7 +1082,3 @@ g-emoji img {
   color: #d1242f;
 }
 
-.bold-text {
-    font-weight: bold;
-    color: rgb(0,82,255);
-}

@@ -5,4 +5,4 @@ nav:
 theme: readthedocs
 use_directory_urls: false
 extra_css:
-  - stylesheets/extra.css
+  - stylesheets/extra_v2.css
